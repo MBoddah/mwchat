@@ -9,6 +9,26 @@
 </head>
 <body>
     <div class="maindiv">
+        <div class="tabsregdiv">
+            <div class="tabdiv">
+                <button class="regentertab" id="entertab" id="regtab" onclick="enterside()">Вход</button>
+                <button class="regentertab" id="regtab" onclick="registrationside()">Регистрация</button>
+            </div>
+            <div class="regenterdiv">
+                <div class="registrationdiv">
+                    <h1 class="regh1">Регистрация</h1>
+                    <input type="text" placeholder="Nickname" class="formfield" id="nicknamereg">
+                    <input type="text" placeholder="Password" class="formfield" id="passwordreg">
+                    <button class="regenterbut" id="regbut">Регистрация</button>
+                </div>
+                <div class="enterdiv">
+                    <h1 class="regh1">Вход</h1>
+                    <input type="text" placeholder="Nickname" class="formfield" id="nicknameenter">
+                    <input type="text" placeholder="Password" class="formfield" id="passwordenter">
+                    <button class="regenterbut" id="enterbut">Вход</button>
+                </div>
+            </div>
+        </div>
         <h1 class="fonttitle">MWChat</h1>
         <div class="chatwindow">
             <div class="chat"></div>
@@ -19,6 +39,6 @@
             <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
             <button class="but_sent" onclick="send()">Send</button>
         </div>
-      </div>
+    </div>
 </body>
 </html>
