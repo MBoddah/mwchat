@@ -1,8 +1,9 @@
-
-
-let chat = document.querySelector('.chat');
-let oldMessageElement;
-let key = '0';
+let data_key = 0;
+const userLogin = 'Dima';
+const recieverLogin = 'Anton';
+const chatElement = document.querySelector('.chat');
+const messageArea = document.querySelector('.mess_area');
+const chatData = getHistory();
 
 function enterside()
 {
@@ -30,23 +31,41 @@ function registrationside()
     enterTab.style.zIndex = '0';
 }
 
-while (localStorage.getItem(key) != null)
-{
-    oldMessageElement = document.createElement('p');
-    oldMessageElement.classList.add('mymessages');
-    oldMessageElement.innerHTML = localStorage.getItem(key);
-    chat.appendChild(oldMessageElement);
-    key = String(Number(key) + 1);
-}
+function getHistory() {
+    let chatHistory = [];
+    if(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
+        while(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
+            let historyMessage = {
+                sender: userLogin,
+                reciever: recieverLogin,
+                text: localStorage.getItem(userLogin + recieverLogin + data_key)
+            };
+            chatHistory.push(historyMessage);
+            renderMessage(historyMessage);
+            data_key++;
+        }
+        return chatHistory;
+    } else {
+        return [];
+    }
+};
 
-function send()
-{
-    let message = document.querySelector('.mess_area');
-    localStorage.setItem(key, message.value);
-    let messageElement = document.createElement('p');
+function sendMessage() {
+    let message = {
+        sender: userLogin,
+        reciever: recieverLogin,
+        text: messageArea.value
+    };
+    chatData.push(message);
+    localStorage.setItem(message.sender + message.reciever + data_key, message.text);
+    renderMessage(message);
+    data_key++;
+    messageArea.value = '';
+};
+
+function renderMessage(messageObject) {
+    const messageElement = document.createElement('p');
     messageElement.classList.add('mymessages');
-    messageElement.innerHTML = message.value;
-    chat.appendChild(messageElement);
-    key = String(Number(key) + 1);
-    message.value = '';
+    messageElement.innerHTML = messageObject.text;
+    chatElement.appendChild(messageElement);
 }

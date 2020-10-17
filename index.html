@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="maindiv">
-        <div class="tabsregdiv">
+        <h1 class="fonttitle">MWChat</h1>
+        <div class="regwindow">
             <div class="tabdiv">
                 <button class="regentertab" id="entertab" id="regtab" onclick="enterside()">Вход</button>
                 <button class="regentertab" id="regtab" onclick="registrationside()">Регистрация</button>
@@ -29,15 +30,15 @@
                 </div>
             </div>
         </div>
-        <h1 class="fonttitle">MWChat</h1>
         <div class="chatwindow">
             <div class="chat"></div>
-                    <!-- <button class="but_send">Send</button> -->
-                    <!-- <input type="text" class="mess_area" placeholder="Type your message" name="send_mess"> -->
+            <div class="typezone">
+                <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
+                <button class="but_sent" onclick="send()">Send</button>
             </div>
-        <div class="typezone">
-            <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
-            <button class="but_sent" onclick="send()">Send</button>
+        </div>
+        <div class="dialogdiv">
+
         </div>
     </div>
 </body>
