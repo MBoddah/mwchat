@@ -12,17 +12,17 @@
         <h1 class="fonttitle">MWChat</h1>
         <div class="dialogdiv">
             <ul class="contacts">
-                <li class="contactli"><button class="contact">Общий</button></li>
-                <li class="contactli"><button class="contact">Дима</button></li>
-                <li class="contactli"><button class="contact">Антон</button></li>
-                <li class="contactli"><button class="contact">Максим</button></li>
+                <li class="contactli"><button class="contact" onclick="changeChat('General')">Общий</button></li>
+                <li class="contactli"><button class="contact" onclick="changeChat('Dima')">Дима</button></li>
+                <li class="contactli"><button class="contact" onclick="changeChat('Anton')">Антон</button></li>
+                <li class="contactli"><button class="contact" onclick="changeChat('Max')">Максим</button></li>
             </ul>
         </div>
         <div class="chatwindow">
             <div class="chat"></div>
             <div class="typezone">
                 <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
-                <button class="but_sent" onclick="send()">Send</button>
+                <button class="but_sent" onclick="sendMessage()">Send</button>
             </div>
         </div>
         <div class="regwindow">

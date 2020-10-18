@@ -1,9 +1,10 @@
 let data_key = 0;
 const userLogin = 'Dima';
-const recieverLogin = 'Anton';
+let recieverLogin = 'Max';
 const chatElement = document.querySelector('.chat');
 const messageArea = document.querySelector('.mess_area');
-const chatData = getHistory();
+let chatData = getHistory();
+
 
 function enterside()
 {
@@ -32,7 +33,7 @@ function registrationside()
 }
 
 function getHistory() {
-    let chatHistory = [];
+    chatHistory = [];
     if(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
         while(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
             let historyMessage = {
@@ -67,5 +68,20 @@ function renderMessage(messageObject) {
     const messageElement = document.createElement('p');
     messageElement.classList.add('mymessages');
     messageElement.innerHTML = messageObject.text;
-    chatElement.appendChild(messageElement);
+    chatElement.append(messageElement);
+}
+
+function cleanChat() {
+    for(let message of chatData) {
+        let deletedMessage = document.querySelector('.mymessages')
+        console.log(deletedMessage);
+        deletedMessage.remove();
+    }
+}
+
+function changeChat(chat) {
+    data_key = 0;
+    recieverLogin = chat;       
+    cleanChat();
+    chatData = getHistory();  
 }
