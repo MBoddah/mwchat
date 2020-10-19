@@ -1,9 +1,13 @@
 let data_key = 0;
+let contact_key = 0;
 const userLogin = 'Dima';
-let recieverLogin = 'Max';
+let recieverLogin = '';
 const chatElement = document.querySelector('.chat');
 const messageArea = document.querySelector('.mess_area');
+const contactsArea = document.querySelector('.contacts')
 let chatData = getHistory();
+let contactList = getContacts();
+console.log(contactList);   
 
 
 function enterside()
@@ -33,7 +37,7 @@ function registrationside()
 }
 
 function getHistory() {
-    chatHistory = [];
+    let chatHistory = [];
     if(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
         while(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
             let historyMessage = {
@@ -50,6 +54,44 @@ function getHistory() {
         return [];
     }
 };
+
+function getContacts() {
+    let contacts = [];
+    if(localStorage.getItem(contact_key) != null) {
+        while(localStorage.getItem(contact_key) != null) {
+            let contact = localStorage.getItem(contact_key);
+            contacts.push(contact);
+            renderNewContact(contact);
+            contact_key++;
+        }
+        return contacts;
+    } else {
+        return [];
+    }
+}
+
+function addContact() {
+    const newContact = prompt('Login');
+    localStorage.setItem(contact_key, newContact);
+    contactList.push(newContact);
+    renderNewContact(newContact);
+    contact_key++;
+    return newContact;
+}
+
+function renderNewContact(contactName) {
+    const contactElement = document.createElement('li');
+    const contactButton = document.createElement('button');
+    contactElement.classList.add('contactli');
+    contactButton.classList.add('contact');
+    contactButton.innerHTML =contactName;
+    contactButton.onclick = function() {
+        switchChat(contactName);
+    };
+    contactsArea.append(contactElement);
+    contactElement.append(contactButton);
+
+}
 
 function sendMessage() {
     let message = {
@@ -74,12 +116,11 @@ function renderMessage(messageObject) {
 function cleanChat() {
     for(let message of chatData) {
         let deletedMessage = document.querySelector('.mymessages')
-        console.log(deletedMessage);
         deletedMessage.remove();
     }
 }
 
-function changeChat(chat) {
+function switchChat(chat) {
     data_key = 0;
     recieverLogin = chat;       
     cleanChat();
