@@ -26,6 +26,7 @@ function sendMessage() {
     chatData.push(message);
     localStorage.setItem(message.sender + message.reciever + data_key, message.text);
     renderMessage(message);
+    insertLastMessage(message);
     data_key++;
     messageArea.value = '';
 }
@@ -37,6 +38,27 @@ function renderMessage(messageObject) {
     chatElement.append(messageElement);
 }
 
+function insertLastMessage(messageObject) {
+    let dialog = document.getElementById('last'+messageObject.reciever);
+    dialog.innerHTML = messageObject.sender + ': ' + messageObject.text;
+}
+
+function fillLastMessages() {
+    contactList.forEach(function(contact) {
+        let search_key = 0;
+        let last_mess;
+        if(localStorage.getItem(userLogin + contact + search_key) != null) {
+            while(localStorage.getItem(userLogin + contact + search_key) != null) {
+                last_mess = localStorage.getItem(userLogin + contact + search_key);
+                search_key++;
+            }
+            insertLastMessage({
+                sender: userLogin,
+                reciever: contact,
+                text: last_mess})
+        }   
+    });
+}
 
 function cleanChat() {
     chatData.forEach(function(message, key) {
@@ -50,4 +72,5 @@ function switchChat(chat) {
     recieverLogin = chat;       
     cleanChat();
     chatData = getHistory();  
+    chatBar.innerHTML = chat;
 }

@@ -6,10 +6,13 @@ html, body{
 }
 
 .fonttitle{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
-    text-align: center;
+    text-align: left;
     margin: auto;
-    width: 100%;
+    margin-left: 1%;
+    bottom: 2%;
+    color: #fff;
 }
 
 .maindiv {
@@ -19,20 +22,37 @@ html, body{
     background-color: rgb(86, 130,163);
 }
 
+.headerbar {
+    z-index: 3;
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    background-color: rgb(86, 130,163);
+}
+
 .chatwindow {
+    top: 5%;
     position: relative;
-    width: 40%;
-    height: 80%;
-    margin: 4%;
+    width: 60%;
+    height: 95%;
     background-color: rgb(231, 235, 240);
     border: 1px solid black;
 }
 
 .chat {
     width: 100%;
-    height: 90%;
+    height: 85%;
     overflow-y: scroll;
+}
 
+.chatbar{
+    border-bottom-style: groove;
+    border-width: 1px;
+    height: 5%;
+    position: relative;
+    background-color: #fff;
+    padding: 0.73% 2% 0.73% 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .mymessages{
@@ -87,7 +107,6 @@ html, body{
     top: 5%;
 }
 
-
 .registrationdiv {
     position: absolute;
     display: none;
@@ -136,19 +155,38 @@ html, body{
 }
 
 .dialogdiv {
+    top: 5%;
     position: relative;
     overflow-y: scroll;
     width: 25%;
     float: right;
-    height: 100%;
-    background-color: rgb(231, 235, 240);
+    height: 95%;
+    background-color: #fff;
     border-right: 1px solid black;
 }
+
+.dialogbar{
+    padding: 3%;
+    background-color: #fff;
+    height: 5%;
+    width: 94%;
+}
+
+.friendSearch{
+    border-style: groove;
+    border-radius: 10px;
+    padding: 0;
+    position: relative;
+    height: 96%;
+    width: 100%;
+}
+
 .regwindow {
+    top: 5%;
+    margin: 1%;
     position: relative;
     width: 25%;
     height: 30%;
-    top: 5%;
 }
 
 .communication {
@@ -158,22 +196,60 @@ html, body{
 }
 
 .contacts {
-    width: 90%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
     height: 100%;
 }
 
 .contact {
+    margin: 0;
+    padding-left: 2%;
+    border-style: none;
+    border-bottom: solid 1px #ddd;
     width: 100%;
     height: 100%;
+    background-color: #fff;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    text-align: left;
+}
+
+.contactlogo {
+    display: inline-block;
+    position: relative;
+    height: 70%;
+    width: 10%;
+    border-radius: 50%;
     background-color: rgb(86, 130,163);
     color: white;
-    font-size: 20px;
+    box-sizing: content-box;
+}
+
+.dialoginfo{
+    display: inline-block;
+    margin-left: 2%;
+}
+
+.nick{
+    font-weight: 550;
+    margin: 0;
+    margin-bottom: 1%;
+    display: block;
+    margin-right: 2%;
+}
+
+.lastmessage{
+    margin: 0;
+    display: block;
+    font-style: italic;
+    color: grey;
 }
 
 .contactli {
-    width: 90%;
+    margin: 0;
+    width: 100%;
     height: 5%;
     list-style-type: none;
-    margin-top: 3%;
-    margin-bottom: 3%;
 }

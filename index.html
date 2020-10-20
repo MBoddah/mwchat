@@ -12,14 +12,20 @@
 </head>
 <body>
     <div class="maindiv">
-        <h1 class="fonttitle">MWChat</h1>
+        <div class="headerbar">
+            <h1 class="fonttitle">MWChat</h1>
+        </div>
+        <!-- <h1 class="fonttitle">MWChat</h1> -->
         <div class="dialogdiv">
+            <div class="dialogbar">
+                <input type="text" class="friendSearch" placeholder=" Find a friend.." onchange="addContact(this.value)" >
+            </div>
+            <!-- <button onclick="deleteContact()">DeleteContact</button> -->
             <ul class="contacts">
-                <button onclick="addContact()">AddContact</button>
-                <button onclick="deleteContact()">DeleteContact</button>
             </ul>
         </div>
         <div class="chatwindow">
+            <div class="chatbar">Have a nice Chat</div>
             <div class="chat"></div>
             <div class="typezone">
                 <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
