@@ -13,13 +13,15 @@ function getContacts() {
     }
 }
 
-function addContact() {
-    const newContact = prompt('Login');
+function addContact(newContact) {
+    if(newContact !== null) {
     localStorage.setItem(contact_key, newContact);
     contactList.push(newContact);
     renderNewContact(newContact);
     contact_key++;
+    searchElement.value = '';
     return newContact;
+    } 
 }
 
 function deleteContact() {
@@ -35,17 +37,34 @@ function deleteContact() {
 }
 
 function renderNewContact(contactName) {
-    const contactElement = document.createElement('li');
-    const contactButton = document.createElement('button');
-    contactElement.classList.add('contactli');
-    contactElement.id = contactName;
-    contactButton.classList.add('contact');
-    contactButton.innerHTML = contactName;
-    contactButton.onclick = function() {
+    const dialogElement = document.createElement('li');
+    const dialogButton = document.createElement('button');
+    const dialogLogo = document.createElement('div');
+    const textElement = document.createElement('div');
+    const nickElement = document.createElement('p');
+    const lastMessElement = document.createElement('p')
+
+    dialogElement.classList.add('contactli');
+    dialogButton.classList.add('contact');
+    dialogLogo.classList.add('contactlogo')
+    textElement.classList.add('dialoginfo')
+    nickElement.classList.add('nick');
+    lastMessElement.classList.add('lastmessage');
+    dialogElement.id = contactName;
+    nickElement.id = 'nick'+contactName;
+    lastMessElement.id = 'last'+contactName;
+
+    nickElement.innerHTML = contactName;
+    lastMessElement.innerHTML = 'Hello!';
+    dialogButton.onclick = function() {
         switchChat(contactName);
     };
-    contactsArea.append(contactElement);
-    contactElement.append(contactButton);
+    contactsArea.append(dialogElement);
+    dialogElement.append(dialogButton);
+    dialogButton.append(dialogLogo);
+    dialogButton.append(textElement);
+    textElement.append(nickElement);
+    textElement.append(lastMessElement);
 }
 
 function removeContact(contactID) {
