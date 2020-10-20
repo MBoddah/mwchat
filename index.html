@@ -6,22 +6,28 @@
     <title>Chat</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js" defer></script>
     <script src="js/registration.js" defer></script>
+    <script src="./js/reginterface.js" defer></script>
+    <script src="./js/messageactions.js" defer></script>
+    <script src="./js/contactactions.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
     <div class="maindiv">
-        <h1 class="fonttitle">MWChat</h1>
+        <div class="headerbar">
+            <h1 class="fonttitle">MWChat</h1>
+        </div>
+        <!-- <h1 class="fonttitle">MWChat</h1> -->
         <div class="dialogdiv">
+            <div class="dialogbar">
+                <input type="text" class="friendSearch" placeholder=" Find a friend.." onchange="addContact(this.value)" >
+            </div>
+            <!-- <button onclick="deleteContact()">DeleteContact</button> -->
             <ul class="contacts">
-                <!-- <li class="contactli"><button class="contact" onclick="changeChat('General')">Общий</button></li>
-                <li class="contactli"><button class="contact" onclick="changeChat('Dima')">Дима</button></li>
-                <li class="contactli"><button class="contact" onclick="changeChat('Anton')">Антон</button></li>
-                <li class="contactli"><button class="contact" onclick="changeChat('Max')">Максим</button></li> -->
-                <button onclick="addContact()">AddContact</button>
             </ul>
         </div>
         <div class="chatwindow">
+            <div class="chatbar">Have a nice Chat</div>
             <div class="chat"></div>
             <div class="typezone">
                 <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
