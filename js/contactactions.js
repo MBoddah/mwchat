@@ -21,7 +21,7 @@ function addContact(newContact) {
     contact_key++;
     searchElement.value = '';
     return newContact;
-    } 
+    }
 }
 
 function deleteContact() {

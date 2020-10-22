@@ -13,4 +13,18 @@ function add_new_user($link, $nickname, $password){
     $result = mysqli_query($link, $insert_query);
     return $result;
 }
+
+function check_user_password($link, $nickname, $password){
+    $query = mysqli_query($link, "SELECT * FROM users WHERE Nickname='$nickname'");
+    $row = mysqli_fetch_assoc($query);
+    if($row){
+        if($row['Password'] == $password)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
 ?>
