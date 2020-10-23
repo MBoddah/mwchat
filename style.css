@@ -5,14 +5,13 @@ html, body{
     margin: 0;
 }
 
-.fonttitle{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
+.logo{
+    height: 80%;
     text-align: left;
     margin: auto;
+    margin-top: .5%;
     margin-left: 1%;
-    bottom: 2%;
-    color: #fff;
+
 }
 
 .maindiv {
@@ -41,11 +40,12 @@ html, body{
 
 .chat {
     width: 100%;
-    height: 85%;
+    height: 88.7%;
     overflow-y: scroll;
 }
 
 .chatbar{
+    display: block;
     border-bottom-style: groove;
     border-width: 1px;
     height: 5%;
@@ -69,16 +69,27 @@ html, body{
     display: flex;
     margin: auto;
     width: 100%;
-    height: 10%;
+    height: 5%;
     border: 1px solid black
 }
 
 .mess_area{
+    outline: none;
+    resize: none;
     width: 90%;
+    font-size: 20px;
+    
 }
 
-.but_send{
+.but_sent {
     width: 10%;
+    background-color: #fff;
+    border-style: none;
+}
+
+.sendImg {
+    margin: 0;
+    width: 70%;
 }
 
 .regh1 {
@@ -225,7 +236,7 @@ html, body{
     background-color: rgb(86, 130,163);
     color: white;
     box-sizing: content-box;
-}
+}   
 
 .dialoginfo{
     display: inline-block;
@@ -245,6 +256,49 @@ html, body{
     display: block;
     font-style: italic;
     color: grey;
+}
+
+.contactmenu {
+    display: inline-block;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    right: 2%;
+    margin-top: 2%;
+}
+
+.dots {
+    width: 12px;
+    height: 35px;
+}
+
+
+.contactoption {
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    border: none;
+    width: 70px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    right: 1%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.infoBut, .deleteBut {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px #ddd;
+    background-color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
 }
 
 .contactli {

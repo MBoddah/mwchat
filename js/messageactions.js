@@ -1,38 +1,43 @@
-function getHistory() {
+function getHistory(sender, reciever) {
+    let key = 0;
     let chatHistory = [];
-    if(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
-        while(localStorage.getItem(userLogin + recieverLogin + data_key) != null) {
+    if(localStorage.getItem(sender + reciever + key) != null) {
+        while(localStorage.getItem(sender + reciever + key) != null) {
             let historyMessage = {
-                sender: userLogin,
-                reciever: recieverLogin,
-                text: localStorage.getItem(userLogin + recieverLogin + data_key)
+                sender,
+                reciever,
+                text: localStorage.getItem(sender + reciever + key)
             };
             chatHistory.push(historyMessage);
             renderMessage(historyMessage);
-            data_key++;
+            key++;
         }
+        console.log(sender+reciever+key);
         return chatHistory;
     } else {
         return [];
     }
 }
 
-function sendMessage() {
+
+function sendMessage(area, messages, sender, reciever, key) {
     let message = {
-        sender: userLogin,
-        reciever: recieverLogin,
-        text: messageArea.value
+        sender,
+        reciever,
+        text: area.value
     };
-    chatData.push(message);
-    localStorage.setItem(message.sender + message.reciever + data_key, message.text);
+    messages.push(message);
+    localStorage.setItem(message.sender + message.reciever + key, message.text);
     renderMessage(message);
     insertLastMessage(message);
-    data_key++;
-    messageArea.value = '';
+    area.value = '';
+    return message;  
 }
+
 
 function renderMessage(messageObject) {
     const messageElement = document.createElement('p');
+    const chatElement = document.querySelector('.chat');
     messageElement.classList.add('mymessages');
     messageElement.innerHTML = messageObject.text;
     chatElement.append(messageElement);
@@ -43,34 +48,29 @@ function insertLastMessage(messageObject) {
     dialog.innerHTML = messageObject.sender + ': ' + messageObject.text;
 }
 
-function fillLastMessages() {
-    contactList.forEach(function(contact) {
-        let search_key = 0;
+function fillLastMessages(contacts, sender) {
+    contacts.forEach(function(contact) {
+        let key = 0;
         let last_mess;
-        if(localStorage.getItem(userLogin + contact + search_key) != null) {
-            while(localStorage.getItem(userLogin + contact + search_key) != null) {
-                last_mess = localStorage.getItem(userLogin + contact + search_key);
-                search_key++;
+        if(localStorage.getItem(sender + contact + key) != null) {
+            while(localStorage.getItem(sender + contact + key) != null) {
+                last_mess = localStorage.getItem(sender + contact + key);
+                key++;
             }
             insertLastMessage({
-                sender: userLogin,
+                sender,
                 reciever: contact,
                 text: last_mess})
         }   
     });
 }
 
-function cleanChat() {
-    chatData.forEach(function(message, key) {
+function cleanChat(messages) {
+    messages.forEach(function() {
         let deletedMessage = document.querySelector('.mymessages')
+        if(deletedMessage) {
         deletedMessage.remove();
+        }
+    messages = [];
     })
-}
-
-function switchChat(chat) {
-    data_key = 0;
-    recieverLogin = chat;       
-    cleanChat();
-    chatData = getHistory();  
-    chatBar.innerHTML = chat;
 }
