@@ -10,12 +10,13 @@
 }
 
 .dialogbar{
+    position: relative;
     margin: 0;
     padding: 0;
     background-color: #fff;
     border-bottom: solid 1px #ddd;
     height: 7%;
-    min-height: 47px;
+    min-height: 50px;
     width: 100%;
 }
 
@@ -26,9 +27,9 @@
     border-radius: 10px;
     padding: 0;
     position: relative;
-    height: 70%;
+    height: 60%;
     width: 90%;
-    margin: 2% 5% 1% 5%;
+    margin: 3% 5% 2% 5%;
 }
 /* ????????????????????? */
 .communication {
@@ -39,6 +40,7 @@
 
 .contacts {
     overflow-y: scroll;
+    overflow: auto;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -138,7 +140,8 @@
 
 .contactoption {
     display: inline-block;
-    position: absolute;
+    position: sticky;
+    left: 80%;
     z-index: 3;
     border: none;
     width: 115px;
@@ -146,7 +149,6 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     right: 1%;
-    margin-top: 40px;
     text-align: center;
 }
 
