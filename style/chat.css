@@ -8,12 +8,12 @@
 
 .chatbar{
     display: block;
-    border-bottom-style: groove;
+    border-bottom: solid 1px #ddd;
     border-width: 1px;
-    height: 5%;
+    height: 7%;
+    min-height: 47px;
     position: relative;
     background-color: #fff;
-    padding: 0.73% 2% 0.73% 2%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -38,7 +38,7 @@
     text-align: center;
     margin: auto;
     width: 100%;
-    height: 6.5%;
+    height: 6%;
     background-color: #fff;
     border-top: 1px solid #aaa;
 }
@@ -56,12 +56,11 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     width: 70%;
-    font-size: 14px ;
-    margin-top: .5%;
-    
+    font-size: 12px ;
 }
 
 .but_sent {
+    height: 100%;
     width: 6%;
     background-color: #fff;
     border-style: none;
@@ -69,5 +68,6 @@
 
 .sendImg {
     margin: 0;
-    width: 100%;
+    height: 30px;
+    margin-bottom: .5%;
 }
