@@ -23,13 +23,17 @@ function getContactButtons(contacts) {
 
 function addContact(contacts, messages, newContact, key) {
     const searchElement = document.querySelector('.friendSearch')
-    if(newContact !== null) {
+    if ((newContact !== null) && (contacts.indexOf(newContact) === -1)) {
     localStorage.setItem(key, newContact);
     contacts.push(newContact);
     renderNewContact(newContact, messages);
     key++;
     searchElement.value = '';
-    } 
+    }  else { 
+        if (contacts.indexOf(newContact) !== -1)  {
+            alert('Contact already exists!');
+        }
+    }
 }
 
 function renderNewContact(contactName) {
@@ -45,11 +49,12 @@ function renderNewContact(contactName) {
     const optionDots = document.createElement('img');
     const optionsList = document.createElement('div');
     const optionInfo = document.createElement('button');
+    const optionClean = document.createElement('button');
     const optionDelete = document.createElement('button');
     
 
-    dialogElement.classList.add('contactli');
-    dialogButton.classList.add('contact');
+    dialogElement.classList.add('contactli', 'contactelem');
+    dialogButton.classList.add('contact', 'contactelem');
     dialogLogo.classList.add('contactlogo')
     textElement.classList.add('dialoginfo')
     nickElement.classList.add('nick');
@@ -59,6 +64,7 @@ function renderNewContact(contactName) {
     optionDots.classList.add('dots')
     optionsList.classList.add('contactoption');
     optionInfo.classList.add('infoBut');
+    optionClean.classList.add('cleanBut');
     optionDelete.classList.add('deleteBut');
 
     optionDots.src = "img/dots.png"
@@ -70,11 +76,13 @@ function renderNewContact(contactName) {
     optionsBut.id = 'menu' + contactName;
     optionsList.id = 'opt' + contactName; 
     optionInfo.id = 'info' + contactName;
+    optionClean.id = 'clean' + contactName;
     optionDelete.id = 'del' + contactName;
 
     nickElement.innerHTML = contactName;
-    lastMessElement.innerHTML = 'Hello!';
+    lastMessElement.innerHTML = 'Say Hello!';
     optionInfo.innerHTML = 'Info';
+    optionClean.innerHTML = 'Clean History'
     optionDelete.innerHTML = 'Delete'
 
     contactsArea.append(dialogElement);
@@ -88,7 +96,22 @@ function renderNewContact(contactName) {
     optionsBut.append(optionDots);
     dialogElement.append(optionsList);
     optionsList.append(optionInfo);
+    optionsList.append(optionClean);
     optionsList.append(optionDelete);
+}
+
+function highlightContact (contact, contacts) {
+    contacts.forEach(function(elem) {
+        if (document.getElementById(elem).classList.contains('contactliLighted')) {
+            document.getElementById(elem).classList.toggle('contactliLighted')
+            document.getElementById('but' + elem).style.color = 'black';
+            document.getElementById('last' + elem).style.color = 'grey';
+        }
+    })
+    
+    document.getElementById(contact).classList.toggle('contactliLighted')
+    document.getElementById('but' + contact).style.color = 'white';
+    document.getElementById('last' + contact).style.color = 'white';
 }
 
 function deleteContact(deletedContact, contacts) {
@@ -115,12 +138,4 @@ function updContactStorage(contacts, key) {
         key++;
     });
     return key;
-}
-
-function updMessageStorage(sender, reciever, key) {
-    console.log(key);
-    for (let i = 0; i <= key; i++)
-    {
-        localStorage.removeItem(sender + reciever + i);
-    }
 }

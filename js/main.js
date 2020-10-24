@@ -9,7 +9,8 @@ function main() {
     const chatBar = document.querySelector('.chatbar')  
     const messageArea = document.querySelector('.mess_area');
     const inputContact = document.getElementById('inputContact');
-    
+
+    messageArea.disabled = true;
     let chatData = getHistory(userLogin, recieverLogin);
     data_key = chatData.length;     
     let contactList = getContacts(contact_key);
@@ -45,6 +46,8 @@ function main() {
             chatData = getHistory(userLogin,  contact)
             data_key = chatData.length;
             chatBar.innerHTML =  contact;
+
+            highlightContact(recieverLogin, contactList);
         }
 
         const menuButton = document.getElementById('menu' +  contact);
@@ -54,7 +57,7 @@ function main() {
                 options.style.maxHeight = null;
                 options.style.border = 'none';
             } else {
-                options.style.maxHeight = 50 + 'px';
+                options.style.maxHeight = 100 + 'px';
                 options.style.border = 'solid 1px #ddd';
             }
         }   
@@ -63,6 +66,18 @@ function main() {
         infoButton.onclick = function() {
             const options = document.getElementById('opt' +  contact);
             alert('There`s no info yet, bro');
+            options.style.maxHeight = null;
+            options.style.border = 'none';
+        }
+
+        const cleanButton = document.getElementById('clean' +  contact);
+        cleanButton.onclick = function() {
+            const options = document.getElementById('opt' +  contact);
+            const lastMess = document.getElementById('last' + contact);
+            chatData = cleanChat(chatData);
+            updMessageStorage(userLogin,  contact, data_key);
+            data_key = chatData.length
+            lastMess.innerHTML = 'Say Hello!';
             options.style.maxHeight = null;
             options.style.border = 'none';
         }

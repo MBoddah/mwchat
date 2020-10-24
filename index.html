@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image" href="img/favico.ico">
-    <title>Chat</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MWChat</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/reg.css">
+    <link rel="stylesheet" href="style/contacts.css">
+    <link rel="stylesheet" href="style/chat.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/registration.js" defer></script>
@@ -19,7 +22,7 @@
 <body>
     <div class="maindiv">
         <div class="headerbar">
-            <img class="logo" src="img/Logo.png">
+            <img class="logo" src="img/Logo.png"> 
         </div>
         <div class="dialogdiv">
             <div class="dialogbar">
@@ -29,15 +32,16 @@
             </ul>
         </div>
         <div class="chatwindow">
-            <div class="chatbar">
-            </div>
+            <div class="chatbar">Select contact</div>
             <div class="chat">
             </div>
             <div class="typezone">
-                <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
-                <button class="but_sent" id="buttonSend">
-                    <img class="sendImg" src="img/send.png">
-                </button>
+                <div class="typezoneWrap">
+                    <textarea name="send_mess" class="mess_area" placeholder="  Type your message"></textarea>
+                    <button class="but_sent" id="buttonSend">
+                        <img class="sendImg" src="img/send.png">
+                    </button>
+                </div>
             </div>
         </div>
         <div class="regwindow">

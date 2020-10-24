@@ -69,8 +69,16 @@ function cleanChat(messages) {
     messages.forEach(function() {
         let deletedMessage = document.querySelector('.mymessages')
         if(deletedMessage) {
-        deletedMessage.remove();
+            deletedMessage.remove();
         }
-    messages = [];
     })
+    messages = []
+    return messages;
+}
+
+function updMessageStorage(sender, reciever, key) {
+    for (let i = 0; i <= key; i++)
+    {
+        localStorage.removeItem(sender + reciever + i);
+    }
 }

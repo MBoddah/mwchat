@@ -1,0 +1,80 @@
+.regwindow {
+    top: 5%;
+    margin: 1%;
+    position: relative;
+    width: 25%;
+    height: 30%;
+}
+
+.regh1 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.formfield {
+    width: 90%;
+    margin-left: 4%;
+    margin-bottom: 5%;
+}
+
+.regenterbut {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.regenterdiv {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border: black 1px solid;
+    z-index: 1;
+    top: 5%;
+}
+
+.registrationdiv {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.enterdiv {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.tabdiv {
+    position: absolute;
+    display: flex;
+    bottom: 103.5%;
+    left: 1%;
+    width: 99%;
+    height: 10%;
+}
+
+.regentertab {
+    position: relative;
+    top: 100%;
+    width: 50%;
+    border-bottom: none;
+    outline: none;
+    background-color: white;
+}
+
+.tabsregdiv {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 10%;
+    left: 2%;
+}
+
+#regtab {
+    z-index: 0;
+}
+
+#entertab {
+    z-index: 2;
+}
