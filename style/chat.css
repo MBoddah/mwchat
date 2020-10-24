@@ -1,6 +1,6 @@
 .chatwindow {
     top: 5%;
-    position: relative;
+    position: sticky;
     width: 60%;
     height: 95%;
     background-color: rgb(231, 235, 240);
@@ -8,18 +8,17 @@
 
 .chatbar{
     display: block;
-    border-bottom-style: groove;
+    border-bottom: solid 1px #ddd;
     border-width: 1px;
-    height: 5%;
-    position: relative;
+    height: 7%;
+    position: static;
     background-color: #fff;
-    padding: 0.73% 2% 0.73% 2%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .chat {
     width: 100%;
-    height: 86.7%;
+    height: 85%;
     overflow-y: scroll;
 }
 
@@ -35,10 +34,11 @@
 
 .typezone   {
     display: flex;
+    position: sticky;
     text-align: center;
     margin: auto;
     width: 100%;
-    height: 6.5%;
+    height: 8%;
     background-color: #fff;
     border-top: 1px solid #aaa;
 }
@@ -57,11 +57,11 @@
     border-radius: 20px;
     width: 70%;
     font-size: 14px ;
-    margin-top: .5%;
-    
 }
 
 .but_sent {
+    outline: none;
+    height: 35px;
     width: 6%;
     background-color: #fff;
     border-style: none;
@@ -69,5 +69,6 @@
 
 .sendImg {
     margin: 0;
-    width: 100%;
+    height: 35px;
+    margin-bottom: .5%;
 }
