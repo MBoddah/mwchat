@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/reg.css">
     <link rel="stylesheet" href="style/contacts.css">
     <link rel="stylesheet" href="style/chat.css">
+    <link rel="stylesheet" href="style/adaptive.css" type="text/css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/registration.js" defer></script>
@@ -20,10 +21,16 @@
 
 </head>
 <body>
-    <div class="maindiv">
-        <div class="headerbar">
-            <img class="logo" src="img/Logo.png"> 
+    <header class="headerbar">
+        <img class="logo" src="img/Logo.png"> 
+        <div class="headerButtons">
+            <div class="headerWrapper">
+                <button class="logBut">Sign In</button>
+                <button class="regBut">Sign Up</button>
+            </div>
         </div>
+    </header>
+    <div class="maindiv">
         <div class="dialogdiv">
             <div class="dialogbar">
                 <input type="text" class="friendSearch" id="inputContact" placeholder=" Find a friend..">
@@ -38,29 +45,11 @@
             <div class="typezone">
                 <div class="typezoneWrap">
                     <textarea name="send_mess" class="mess_area" placeholder="  Type your message"></textarea>
+                </div>
+                <div class="sendWrap">
                     <button class="but_sent" id="buttonSend">
-                        <img class="sendImg" src="img/send.png">
+                    <img class="sendImg" src="img/send.png">
                     </button>
-                </div>
-            </div>
-        </div>
-        <div class="regwindow">
-            <div class="tabdiv">
-                <button class="regentertab" id="entertab" id="regtab" onclick="enterside()">Вход</button>
-                <button class="regentertab" id="regtab" onclick="registrationside()">Регистрация</button>
-            </div>
-            <div class="regenterdiv">
-                <div class="registrationdiv">
-                    <h1 class="regh1">Регистрация</h1>
-                    <input type="text" placeholder="Nickname" class="formfield" id="nicknamereg">
-                    <input type="text" placeholder="Password" class="formfield" id="passwordreg">
-                    <button class="regenterbut" id="regbut">Регистрация</button>
-                </div>
-                <div class="enterdiv">
-                    <h1 class="regh1">Вход</h1>
-                    <input type="text" placeholder="Nickname" class="formfield" id="nicknameenter">
-                    <input type="text" placeholder="Password" class="formfield" id="passwordenter">
-                    <button class="regenterbut" id="enterbut">Вход</button>
                 </div>
             </div>
         </div>
