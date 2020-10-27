@@ -1,0 +1,74 @@
+.chatwindow {
+    top: 5%;
+    position: sticky;
+    width: 60%;
+    height: 95%;
+    background-color: rgb(231, 235, 240);
+}
+
+.chatbar{
+    display: block;
+    border-bottom: solid 1px #ddd;
+    border-width: 1px;
+    height: 7%;
+    position: static;
+    background-color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.chat {
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+}
+
+.mymessages{
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 1%;
+    border-radius: 15px;
+    padding: 2%;
+    background: white;
+}
+
+.typezone   {
+    display: flex;
+    position: sticky;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: 8%;
+    background-color: #fff;
+    border-top: 1px solid #aaa;
+}
+
+.typezoneWrap {
+    margin: auto;
+    width: 90%;
+}
+
+.mess_area{
+    display: inline-block;
+    outline: none;
+    resize: none;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 70%;
+    font-size: 14px ;
+}
+
+.but_sent {
+    outline: none;
+    height: 35px;
+    width: 6%;
+    background-color: #fff;
+    border-style: none;
+}
+
+.sendImg {
+    margin: 0;
+    height: 35px;
+    margin-bottom: .5%;
+}

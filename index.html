@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="icon" type="image" href="img/favico.ico">
+    <title>MWChat</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/reg.css">
+    <link rel="stylesheet" href="style/contacts.css">
+    <link rel="stylesheet" href="style/chat.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/authorization.js" defer></script>
     <script src="js/registration.js" defer></script>
@@ -12,27 +16,31 @@
     <script src="./js/messageactions.js" defer></script>
     <script src="./js/contactactions.js" defer></script>
     <script src="./js/main.js" defer></script>
+    <script src="./js/index.js" defer></script>
 </head>
 <body>
     <div class="maindiv">
         <div class="headerbar">
-            <h1 class="fonttitle">MWChat</h1>
+            <img class="logo" src="img/Logo.png"> 
         </div>
-        <!-- <h1 class="fonttitle">MWChat</h1> -->
         <div class="dialogdiv">
             <div class="dialogbar">
-                <input type="text" class="friendSearch" placeholder=" Find a friend.." onchange="addContact(this.value)" >
+                <input type="text" class="friendSearch" id="inputContact" placeholder=" Find a friend..">
             </div>
-            <!-- <button onclick="deleteContact()">DeleteContact</button> -->
             <ul class="contacts">
             </ul>
         </div>
         <div class="chatwindow">
-            <div class="chatbar">Have a nice Chat</div>
-            <div class="chat"></div>
+            <div class="chatbar">Select contact</div>
+            <div class="chat">
+            </div>
             <div class="typezone">
-                <textarea name="send_mess" class="mess_area" placeholder="Type your message"></textarea>
-                <button class="but_sent" onclick="sendMessage()">Send</button>
+                <div class="typezoneWrap">
+                    <textarea name="send_mess" class="mess_area" placeholder="  Type your message"></textarea>
+                    <button class="but_sent" id="buttonSend">
+                        <img class="sendImg" src="img/send.png">
+                    </button>
+                </div>
             </div>
         </div>
         <div class="regwindow">
