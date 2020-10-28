@@ -82,10 +82,16 @@
     height: 20px;
     background-color: #fff;
     border-style: none;
+    border-radius: 100%;
 }
 
 .sendImg {
     margin: 0;
     height: 20px;
     margin-bottom: .5%;
+}
+
+.sendImg:hover {
+    border-radius: 100%;
+    background-color: rgb(86, 130,163);
 }

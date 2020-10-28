@@ -46,8 +46,8 @@ function main() {
             chatData = getHistory(userLogin,  contact)
             data_key = chatData.length;
             chatBar.innerHTML =  contact;
-
             highlightContact(recieverLogin, contactList);
+            window.scrollTo(document.body.scrollWidth/2, 0);
         }
 
         const menuButton = document.getElementById('menu' +  contact);

@@ -13,6 +13,8 @@
         width: 200%;
         height: 100%;
         max-width: none;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
     }
 
     body{
@@ -25,7 +27,25 @@
     }
 
     .logo {
+        float: left;
         width: 15%;
+        margin: 0;
+    }
+
+    .headerButtons {   
+        float: left;
+        width: 35%;
+        text-align: right;
+        padding-right: 1%;
+    }
+
+    .backBut {
+        z-index: 1;
+        margin-left: 5%;
+    }
+
+    .backArrow {
+        width: 100%;
     }
 
     .maindiv {
@@ -64,13 +84,33 @@
     .chatwindow {
         width: 50%;
     }
+
+    .chatbar {
+        position: absolute;
+        background-color: unset;
+        color: #fff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        top: -8%;
+        text-align: center;
+        width: 100%;
+        border: none;
+    }
     
+    .chat {
+        height: 92%;
+    }
 }
 
 @media only screen and (max-width: 640px) {
 
     .logo {
         width: 20%;
+    }
+
+    .headerButtons {   
+        width: 30%;
     }
 
     .friendSearch {
@@ -88,11 +128,16 @@
         width: 30%;
     }
 
-    .regBut, .logBut {
-        width: 60px;
-        height: 30px;
-        font-size: 12px;
+    .headerButtons {   
+        width: 20%;
     }
+
+    .regBut, .logBut {
+        width: 48px;
+        height: 30px;
+        font-size: 9px;
+    }
+
 
     .nick {
         font-size: 16px;
@@ -106,7 +151,7 @@
 @media only screen and (max-width: 320px) {
 
     .regBut, .logBut {
-        width: 50px;
+        width: 35px;
         height: 30px;
         font-size: 10px;
     }
@@ -123,18 +168,18 @@
 
 @media only screen and (max-width: 250px) {
 
-    html {
-        min-width: 200px;
+    html, body {
+        min-width: 400px;
     }
 
     .logo {
-        width: 40%;
+        width: 30%;
     }
 
     .regBut, .logBut {
-        width: 50px;
+        width: 30px;
         height: 20px;
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .nick {
