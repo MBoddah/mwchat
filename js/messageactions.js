@@ -12,7 +12,6 @@ function getHistory(sender, reciever) {
             renderMessage(historyMessage);
             key++;
         }
-        console.log(sender+reciever+key);
         return chatHistory;
     } else {
         return [];
