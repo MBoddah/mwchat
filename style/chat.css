@@ -1,8 +1,9 @@
 .chatwindow {
-    top: 5%;
-    position: sticky;
-    width: 60%;
-    height: 95%;
+    float: left;
+    margin-left: 0;
+    position: relative;
+    width: 70%;
+    height: 100%;
     background-color: rgb(231, 235, 240);
 }
 
@@ -33,42 +34,64 @@
 }
 
 .typezone   {
-    display: flex;
+    padding: 0;
+    display: table;
     position: sticky;
     text-align: center;
     margin: auto;
+    padding: 0 10%;
     width: 100%;
     height: 8%;
     background-color: #fff;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #ddd  ;
 }
 
 .typezoneWrap {
-    margin: auto;
-    width: 90%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 60%;
+    margin-right: 0 ;
 }
 
 .mess_area{
+    position: relative;
     display: inline-block;
     outline: none;
     resize: none;
     background-color: rgb(245, 245, 245);
     border: 1px solid #ccc;
     border-radius: 20px;
-    width: 70%;
-    font-size: 14px ;
+    width: 100%;
+    font-size: 12px ;
+}
+
+.sendWrap {
+    display: table-cell;
+    vertical-align: middle;
+    width: 5%;
+    text-align: left;
 }
 
 .but_sent {
+    top: 0;
+    position: relative;
+    display: inline-block;
     outline: none;
-    height: 35px;
     width: 6%;
+    height: 20px;
     background-color: #fff;
     border-style: none;
+    border-radius: 100%;
 }
 
 .sendImg {
     margin: 0;
-    height: 35px;
+    height: 20px;
     margin-bottom: .5%;
+}
+
+.sendImg:hover {
+    border-radius: 100%;
+    background-color: rgb(86, 130,163);
 }
