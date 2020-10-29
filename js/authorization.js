@@ -16,6 +16,7 @@ function afterRegistration(data) {
     else {
         localStorage.setItem('user', data);
         alert('Вы зарегистрировались как ' + data);
+        deleteModal();
     }
 }
 

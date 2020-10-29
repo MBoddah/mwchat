@@ -1,22 +1,21 @@
-$(document).ready (function () {
-    $("#regbut").bind("click", function() {
-        $.ajax({
-            url: "inc/registration.php",
-            type: "POST",
-            data: ({nicknamereg: $("#nicknamereg").val(),
-                    passwordreg: $("#passwordreg").val()}),
-            dataType: "html",
-            success: afterRegistration
-        });
-    });
-    $("#enterbut").bind("click", function() {
+function registration() {
+    $.ajax({
+        url: "inc/registration.php",
+        type: "POST",
+        data: ({nickname_reg: $("#nickname-reg").val(),
+                password_reg: $("#password-reg").val()}),
+        dataType: "html",
+        success: afterRegistration
+    })
+}
+
+function authorization() {
         $.ajax({
             url: "inc/authorization.php",
             type: "POST",
-            data: ({nicknameenter: $("#nicknameenter").val(),
-                    passwordenter: $("#passwordenter").val()}),
+            data: ({nickname_enter: $("#nickname-enter").val(),
+                    password_enter: $("#password-enter").val()}),
             dataType: "html",
             success: afterAuthorization
         });
-    });
-});
+}

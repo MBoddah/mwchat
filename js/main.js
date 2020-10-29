@@ -9,6 +9,8 @@ function main() {
     const chatBar = document.querySelector('.chatbar')  
     const messageArea = document.querySelector('.mess_area');
     const inputContact = document.getElementById('inputContact');
+    const authorizationButton = document.querySelector('.logBut');
+    const registrationButton = document.querySelector('.regBut');
 
     messageArea.disabled = true;
     let chatData = getHistory(userLogin, recieverLogin);
@@ -18,6 +20,9 @@ function main() {
 
     contact_key = contactList.length;   
     fillLastMessages(contactList, userLogin);
+
+    authorizationButton.onclick = () => modalFunction('authorization');
+    registrationButton.onclick = () => modalFunction('registration');
 
     contactButtons.forEach(function(but, i) {
         activateContactButton(but, contactList[i]);
