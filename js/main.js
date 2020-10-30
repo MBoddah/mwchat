@@ -47,7 +47,7 @@ function main() {
             data_key = chatData.length;
             chatBar.innerHTML =  contact;
             highlightContact(recieverLogin, contactList);
-            window.scrollTo(document.body.scrollWidth/2, 0);
+            slideWindow();
         }
 
         const menuButton = document.getElementById('menu' +  contact);
