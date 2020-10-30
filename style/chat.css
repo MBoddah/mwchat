@@ -7,15 +7,48 @@
     background-color: rgb(231, 235, 240);
 }
 
-.chatbar{
-    display: block;
+.chatBarWrap {
+    display: table;
     border-bottom: solid 1px #ddd;
     border-width: 1px;
+    width: 100%;
     height: 7%;
     position: static;
     background-color: #fff;
+}
+
+.chatBarWrap2 {
+    display: table-cell;   
+    vertical-align: middle;
+}
+
+.backBut {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    width: 0px;
+    height: 20px;
+    border-style: none;
+    border-radius: 100%;
+    outline: none;
+    background: transparent;
+}
+
+.backArrow {
+    width: 0;
+    height: 20px;
+}
+
+.chatbar {
+    display: inline-block; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.backBut:hover {
+    background-color: rgba(250, 250, 253, 0.473);   
+    color: black
+}
+
 
 .chat {
     width: 100%;
