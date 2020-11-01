@@ -101,6 +101,7 @@
 
 .dialoginfo{
     display: inline-block;
+    width: 78%;
     margin-left: 2%;
 }
 
@@ -116,6 +117,9 @@
     display: block;
     font-style: italic;
     color: grey;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .contactmenu {

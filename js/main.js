@@ -51,8 +51,8 @@ function main() {
             chatData = getHistory(userLogin,  contact)
             data_key = chatData.length;
             chatBar.innerHTML =  contact;
-
             highlightContact(recieverLogin, contactList);
+            slideWindow();
         }
 
         const menuButton = document.getElementById('menu' +  contact);

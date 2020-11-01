@@ -139,3 +139,11 @@ function updContactStorage(contacts, key) {
     });
     return key;
 }
+
+function slideWindow() {
+    const dialogs = document.querySelector('.dialogdiv');
+    const chat = document.querySelector('.chatwindow');
+
+    dialogs.classList.toggle('slideWindow')
+    chat.classList.toggle('slideWindow')
+}

@@ -5,6 +5,7 @@ html, body{
     max-width: 1400px;
     height: 100vh;
     min-height: 565px;
+    transition: all .2s;
 }
 
 * {
@@ -32,10 +33,11 @@ html {
     height: 7%;
     min-height: 40px;
     background-color: rgb(86, 130,163);
+    padding-right: 2%;
 }
 
 .logo {
-    display: inline-block;
+    float: left;
     height: 80%;
     min-height: 30px;
     text-align: left;
@@ -46,7 +48,6 @@ html {
     display: table;
     float: right;
     height: 100%;
-    margin-right: 5%;
 }
 
 .headerWrapper {
