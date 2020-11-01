@@ -143,14 +143,12 @@
 }
 
 @media only screen and (max-width: 420px) {
-
-
+  
     .regBut, .logBut {
         width: 60px;
         height: 30px;
         font-size: 9px;
     }
-
 
     .nick {
         font-size: 16px;

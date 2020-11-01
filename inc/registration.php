@@ -2,21 +2,24 @@
     require_once 'database.php';
     require_once 'functions.php';
 
-    if (isset($_POST['nickname']) && isset($_POST['password']))
+    if (isset($_POST['nickname_reg']) && isset($_POST['password_reg']))
     {
-        $check_result = check_user_existence($link, $_POST['nickname']);
+        $check_result = check_user_existence($link, $_POST['nickname_reg']);
 
         if($check_result == true){
-            $result = add_new_user($link, $_POST['nickname'], $_POST['password']);
+            $result = add_new_user($link, $_POST['nickname_reg'], $_POST['password_reg']);
             if ($result == true){
-                echo "Success";
+                echo $_POST['nickname_reg'];
             }
             else {
-                echo "Error";
+                echo 0;
             }
         }
         else {
-            echo "loginerror";
+            echo 1;
         }
+    }
+    else {
+        echo "nodata";
     }
 ?>
