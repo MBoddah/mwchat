@@ -5,11 +5,12 @@ function createModal(modalType) {
         modal.insertAdjacentHTML('beforeend', `
         <div class="modal-overlay">
             <div class="modal-window">
-                <h1>Authorization</h1>
-                <input type="text" placeholder="Login" id="nickname-enter">
-                <input type="password" placeholder="Password" id="password-enter">
-                <button class="modal-button" id="ok-enter-button">OK</button>
-                <button class="modal-button" id="cancel-enter-button">Cancel</button>
+                <img class="modalLogo" src="img/mwblue.png"> 
+                <h1>Sign In</h1>
+                <input type="text" placeholder="Login" class="modalInput" id="nickname-enter">
+                <input type="password" placeholder="Password" class="modalInput" id="password-enter">
+                <button class="modalOk" id="ok-enter-button">Sign In</button>
+                <button class="modalCancel" id="cancel-enter-button">Cancel</button>
             </div>
         </div>
         `)
@@ -18,11 +19,12 @@ function createModal(modalType) {
         modal.insertAdjacentHTML('beforeend', `
         <div class="modal-overlay">
             <div class="modal-window">
-                <h1>Registration</h1>
-                <input type="text" placeholder="Login" id="nickname-reg">
-                <input type="password" placeholder="Password" id="password-reg">
-                <button class="modal-button" id="ok-reg-button">OK</button>
-                <button class="modal-button" id="cancel-reg-button">Cancel</button>
+                <img class="modalLogo" src="img/mwblue.png"> 
+                <h1>Sign Up</h1>
+                <input type="text" placeholder="Login" class="modalInput" id="nickname-reg">
+                <input type="password" placeholder="Password" class="modalInput" id="password-reg">
+                <button class="modalOk" id="ok-reg-button">Sign Up</button>
+                <button class="modalCancel" id="cancel-reg-button">Cancel</button>
             </div>
         </div>
         `)

@@ -12,13 +12,16 @@
     html {
         width: 100%;
         height: 100%;
-        max-width: none;
         scroll-behavior: smooth;
         overflow-x: hidden;
     }
 
     body{
         max-width: none;
+    }
+
+    .maindiv {
+        background-color: rgb(231, 235, 240);
     }
 
     .headerbar {
@@ -45,13 +48,11 @@
     }
 
     .dialogdiv {
+        position: absolute;
+        transition: all .2s;
         left: 0;
         width: 100%;
-        transition: transform .2s ease-in;
-    }
-
-    .slideWindow {
-        transform: translateX(-100%);
+        height: 90%;
     }
 
     .dialogbar {
@@ -79,8 +80,9 @@
     }
 
     .chatwindow {
-        transition: transform .2s ease-in;
         position: absolute;
+        transition: all .2s;
+        display: none;
         top: 0;
         width: 100%;
         left: 100%;

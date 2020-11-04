@@ -1,5 +1,4 @@
 function main() {
-
     let data_key = 0;
     let contact_key = 0;
     const userLogin = 'Dima';
@@ -52,7 +51,7 @@ function main() {
             data_key = chatData.length;
             chatBar.innerHTML =  contact;
             highlightContact(recieverLogin, contactList);
-            slideWindow();
+            slideChatIn()
         }
 
         const menuButton = document.getElementById('menu' +  contact);
@@ -99,4 +98,4 @@ function main() {
             messageArea.disabled = true;
         }
     }  
-}      
+}     
