@@ -1,4 +1,7 @@
 <?php
+
+require_once 'database.php';
+
 function check_user_existence($link, $nickname){
     $query = mysqli_query($link, "SELECT Nickname FROM users WHERE Nickname='$nickname'");
     if(mysqli_num_rows($query) > 0)

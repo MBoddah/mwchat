@@ -27,6 +27,7 @@ function sendMessage(area, messages, sender, reciever, key) {
     };
     messages.push(message);
     localStorage.setItem(message.sender + message.reciever + key, message.text);
+    sendMessageOnServer(message);
     renderMessage(message);
     insertLastMessage(message);
     area.value = '';
@@ -80,4 +81,25 @@ function updMessageStorage(sender, reciever, key) {
     {
         localStorage.removeItem(sender + reciever + i);
     }
+}
+
+function sendMessageOnServer(message) {
+    $.ajax({
+        url: "inc/sendMessage.php",
+        type: "POST",
+        data: ({
+            sender: message.sender,
+            reciever: message.reciever,
+            text: message.text
+        }),
+        dataType: "html",
+        success: function(data){
+            if (data == 2){
+                alert('Ошибка полей ввода');
+            }
+            else if(data == 1){
+                alert('Ошибка добавления сообщения на сервер');
+            }
+        }
+    });
 }
